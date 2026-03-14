@@ -1,9 +1,9 @@
-# fin-health
+# fin-Health
 
 | | |
 | --- | --- |
-| CI/CD | [![CI](https://github.com/ShrutiSasi/fin-Health/actions/workflows/ci.yml/badge.svg)](https://github.com/ShrutiSasi/fin-Health/actions/workflows/ci.yml) [![Build/Deploy Docs](https://github.com/ShrutiSasi/fin-Health/actions/workflows/docs-publish.yml/badge.svg)](https://github.com/ShrutiSasi/fin-Health/actions/workflows/docs-publish.yml) <!--[![codecov](https://codecov.io/ShrutiSasi/fin-Health/graph/badge.svg?token=X0sTndIrUu)](https://codecov.io/ShrutiSasi/fin-Health/)--> |
-| Project | [![GitHub Release](https://img.shields.io/github/v/release/ShrutiSasi/fin-Health/?color=green)](https://github.com/ShrutiSasi/fin-Health/releases) [![R Shiny](https://img.shields.io/badge/R-Shiny-blue)](https://shiny.posit.co/) [![Repo Status](https://img.shields.io/badge/repo%20status-Active-brightgreen)](https://github.com/ShrutiSasi/fin-Health) |
+| Build | [![Build/Deploy Docs](https://github.com/ShrutiSasi/fin-Health/actions/workflows/docs-preview.yml/badge.svg)](https://github.com/ShrutiSasi/fin-Health/actions/workflows/docs-publish.yml) |
+| Project | [![R Shiny](https://img.shields.io/badge/R-Shiny-blue)](https://shiny.posit.co/) [![Repo Status](https://img.shields.io/badge/repo%20status-Active-brightgreen)](https://github.com/ShrutiSasi/fin-Health) |
 | Meta | [![Code of Conduct](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md) [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) |
 
 ## Project Synopsis
@@ -17,16 +17,8 @@ Investment analysts and portfolio managers often need to compare financial perfo
 
 ## Features and User Interface
 - **Sector Analysis (Strategic Overview)**
-    - **Peer Benchmarking**: Visualize sector profitability and revenue growth using reactive Altair scatter plots and bar charts.
+    - **Peer Benchmarking**: Visualize sector profitability and revenue growth using reactive ggplot2/plotly scatter plots and bar charts.
     - **Trend Indicators**: Real-time KPI cards showing margin trends with visual directional cues (▲/▼).
-
-- **Company Health (Operational Deep-Dive)**
-    - **Reactive Financial Ratios**: Instant calculation of Liquidity (Current Ratio), Solvency (Debt/Equity), and Profitability (ROE) metrics.
-    - **Automated Status Auditing**: Visual health icons (Healthy/Warning/Danger) based on industry-standard financial thresholds.
-
-- **Fin-Chat: Natural Language Querying**
-    - **Conversational Filtering**: Instead of manual sliders, use the fin-chat interface to ask questions like "Which companies in the Tech sector had a net profit margin above 15%?".
-    - **LLM-Powered Insights**: Integrated querychat logic translates natural language into precise data filters, lowering the barrier for non-technical users.
 
 ## Demo
 
@@ -38,18 +30,19 @@ Below is a short preview of the dashboard interface.
 | Build | URL |
 |-------|-----|
 | Stable (`main`) | []() |
-| Preview (`dev`) | []() |
+| Preview (`dev`) | [https://connect.posit.cloud/shrutisasi/content/019ceeab-da38-fe19-be20-c31d0b3abe3d](https://connect.posit.cloud/shrutisasi/content/019ceeab-da38-fe19-be20-c31d0b3abe3d) |
 
 ## Developer Setup
 
 ### Dependencies
 
--   `conda` (version 26.1.0 or higher)
--   Python and packages listed in [`requirements.txt`](requirements.txt)
+-   R (version 4.3 or higher)
+-   R packages: `shiny`, `bslib`, `here`, `readr`, `dplyr`, `stringr`, `ggplot2`, `plotly`, `tidyr`, `DT`
+-   (Optional) `conda` for environment management
 
 For a more comprehensive guide on development guidelines for this project, check out our contributing page [here](./CONTRIBUTING.md).
 
-1. Install [`conda`](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) as a prerequisite.
+1. Install [R](https://cran.r-project.org/) (>= 4.3) as a prerequisite. Optionally install [`conda`](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) for environment management.
 
 2. Open terminal and run the following commands.
 
@@ -60,7 +53,7 @@ git clone https://github.com/ShrutiSasi/fin-Health.git
 cd fin-Health
 ```
 
-4. Create and activate the conda environment:
+4. Create and activate the conda environment (optional):
 
 ```bash
 conda env create -f environment.yml
