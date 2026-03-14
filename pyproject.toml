@@ -1,0 +1,38 @@
+################################################################################
+# Project Configuration
+################################################################################
+
+[project]
+name = "fin-health"
+version = "0.1.0"
+description = "An interactive dashboard that visualizes the financial health of publicly traded companies."
+authors = [
+    { name = "Shruti Sasi", email = "shruti.sasi14@live.com" }
+]
+license = [
+    { text = "MIT" },
+    { text = "CC-BY-4.0" },
+]
+requires-python = ">=3.12"
+dependencies = [
+    "pandas",
+    "numpy",
+    "matplotlib",
+    "seaborn",
+    "altair",
+    "vegafusion[embed]",
+    "plotly",
+    "jupyterlab",
+    "ipykernel",
+    "shiny",
+    "shinywidgets",
+]
+
+[project.urls]
+Homepage = "https://github.com/ShrutiSasi/fin-Health"
+"Source Code" = "https://github.com/ShrutiSasi/fin-Health/src"
+"Bug Tracker" = "https://github.com/ShrutiSasi/fin-Health/issues"
+Documentation = "https://github.com/ShrutiSasi/fin-Health/blob/main/README.md"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

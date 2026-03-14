@@ -1,0 +1,149 @@
+/*
+ * R bslib structural overrides.
+ * Loaded AFTER custom_styles.css to neutralize Python-Shiny-specific
+ * structural rules that break R bslib's DOM.
+ * Only visual styling (colors, fonts, cards, KPIs, tables) is kept from
+ * custom_styles.css; all layout/overflow/height rules are overridden here.
+ */
+
+/* ── 0. Global font: Inter ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* ── 1. Body: scrollable page instead of viewport-locked ── */
+html, body {
+    overflow: auto !important;
+    height: auto !important;
+    min-height: 100vh;
+}
+
+body > .container-fluid {
+    height: auto !important;
+    overflow: visible !important;
+}
+
+body > .container-fluid > .tab-content,
+body > .container-fluid > .navbar + .container-fluid,
+.navbar + .container-fluid {
+    overflow: visible !important;
+    height: auto !important;
+}
+
+/* ── 2. Sidebar layout: natural flow, not viewport-locked ── */
+.bslib-sidebar-layout {
+    height: auto !important;
+    min-height: 0 !important;
+}
+
+/* ── 3. Main panel: visible overflow, natural height ── */
+.bslib-sidebar-layout > .main,
+.bslib-sidebar-layout > .main.bslib-gap-spacing {
+    overflow: visible !important;
+    height: auto !important;
+}
+
+/* ── 4. page-fillable: undo viewport lock ── */
+.page-fillable {
+    overflow: visible !important;
+    height: auto !important;
+}
+
+/* ── 5. Layout-columns (chart grid rows): natural height ── */
+.page-fillable > bslib-layout-columns,
+.bslib-sidebar-layout > .main > bslib-layout-columns,
+bslib-layout-columns {
+    flex: 0 0 auto !important;
+    min-height: auto !important;
+}
+
+/* ── 6. Cards: natural height, no collapse ── */
+.card {
+    flex: 0 0 auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+}
+
+/* KPI cards keep stretch behaviour */
+.kpi-card-row .card {
+    flex: 1 1 auto !important;
+}
+
+/* ── 7. Card body: visible overflow so plotly renders ── */
+.card-body {
+    overflow: visible !important;
+    min-height: auto !important;
+}
+
+/* ── 7b. Undo htmltools fill system inside chart cards.
+         htmltools sets .html-fill-container > .html-fill-item { min-height:0 }
+         which collapses plotly widgets when the card has no definite height. ── */
+.card-body.html-fill-container {
+    display: block !important;
+}
+.card-body.html-fill-container > .html-fill-item {
+    min-height: auto !important;
+}
+/* KPI card bodies keep flex for centering */
+.kpi-card-row .card-body.html-fill-container {
+    display: flex !important;
+}
+
+/* ── 8. Plotly / widget containers: use explicit height, don't collapse ── */
+.card .shiny-report-size {
+    flex: 0 0 auto !important;
+    min-height: auto !important;
+}
+
+/* ── 9. Grid items: natural size ── */
+.page-fillable bslib-layout-columns > .bslib-grid-item,
+.bslib-sidebar-layout > .main bslib-layout-columns > .bslib-grid-item {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── 10. Sidebar: wider + sticky while main content scrolls ── */
+.bslib-sidebar-layout {
+    --_sidebar-width: 280px !important;
+}
+
+.bslib-sidebar-layout .sidebar:not([hidden]) {
+    position: relative !important;
+    max-height: none !important;
+    overflow: visible !important;
+    align-self: stretch !important;
+    min-width: 280px !important;
+}
+
+/* Override custom_styles.css max-height cap on sidebar */
+.sidebar {
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+/* Ensure selectize dropdowns inside sidebar are not clipped */
+.sidebar .selectize-dropdown {
+    z-index: 1050 !important;
+}
+
+/* ── 11. Collapse toggle: fixed small size ── */
+.bslib-sidebar-layout .collapse-toggle {
+    width: 1.75rem !important;
+    height: 1.75rem !important;
+    min-width: 1.75rem !important;
+    min-height: 1.75rem !important;
+    max-width: 1.75rem !important;
+    max-height: 1.75rem !important;
+    padding: 0 !important;
+    flex: 0 0 1.75rem !important;
+    /*overflow: hidden !important;*/
+}
+
+.bslib-sidebar-layout .collapse-toggle .collapse-icon {
+    width: 1rem !important;
+    height: 1rem !important;
+    max-width: 1rem !important;
+    max-height: 1rem !important;
+}
