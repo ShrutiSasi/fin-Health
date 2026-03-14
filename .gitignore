@@ -205,3 +205,12 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Quarto artifacts
+/.quarto/
+_site/
+**/*.quarto_ipynb
+
+# Coverage files from pytest
+.coverage
+coverage.xml
