@@ -1,5 +1,4 @@
 # Page 1: Sector Analysis — UI layout and server logic.
-# Mirrors src/pages/sector.py
 
 library(shiny)
 library(bslib)

@@ -1,5 +1,4 @@
 # fin-health dashboard — R Shiny entry point.
-# Mirrors src/app.py
 
 library(shiny)
 library(bslib)
