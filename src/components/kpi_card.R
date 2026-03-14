@@ -1,5 +1,4 @@
 # Reusable KPI card factory for consistent card layouts.
-# Mirrors src/components/kpi_card.py
 
 library(shiny)
 library(bslib)
