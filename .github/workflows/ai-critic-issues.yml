@@ -21,7 +21,7 @@ jobs:
           ISSUE_TITLE: ${{ github.event.issue.title }}
           ISSUE_BODY: ${{ github.event.issue.body }}
         run: |
-          SYSTEM_PROMPT="You are a helpful issue triage assistant for a Python Shiny dashboard project (fin-health).
+          SYSTEM_PROMPT="You are a helpful issue triage assistant for an R Shiny dashboard project (fin-health).
           Your task is to analyze newly opened issues for completeness and clarity.
 
           If the issue is clear, detailed, and includes reproducibility steps, thank the contributor and confirm the issue is well-documented.

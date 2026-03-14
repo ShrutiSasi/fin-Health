@@ -3,26 +3,21 @@ channels:
   - conda-forge
   - defaults
 dependencies:
+  - r-base>=4.3
+  - r-shiny
+  - r-bslib
+  - r-here
+  - r-readr
+  - r-dplyr
+  - r-stringr
+  - r-ggplot2
+  - r-plotly
+  - r-tidyr
+  - r-dt
+  # Dev / analysis tools
   - python=3.12
   - pip
   - pip:
-      # Only runtime packages
-      - -r requirements.txt
-      # Dev / analysis tools
-      - numpy
-      - matplotlib
-      - seaborn
-      - plotly
       - jupyterlab
       - ipykernel
-      - quarto-cli
-      - quartodoc
-      # Linting
-      - ruff
-      # Testing
-      - pytest
-      - pytest-cov
-      - pytest-raises
-      - pytest-randomly
-      - pytest-xdist
-      - pytest-playwright
+  - r-lintr

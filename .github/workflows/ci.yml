@@ -8,90 +8,75 @@ on:
   workflow_dispatch:
 
 jobs:
-  unit-test-pytest:
+  lint-r:
+    name: Lint R code
     runs-on: ubuntu-latest
 
     steps:
       - name: Check-out repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
         with:
-          python-version: '3.12'
+          r-version: 'release'
 
-      - name: Install dependencies
+      - name: Install R dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::lintr
+          extra-packages: local::.
+
+      - name: Run lintr
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install -r requirements.txt
-          python -m pip install pytest pytest-cov pytest-raises pytest-randomly pytest-xdist pytest-playwright
-          python -m playwright install --with-deps chromium
-
-      - name: Run tests with coverage
-        run: |
-          pytest --cov=src --cov-report=xml:coverage.xml
-
-      # - name: Upload to codecov
-      #   uses: codecov/codecov-action@v5
-      #   with:
-      #     token: ${{ secrets.CODECOV_TOKEN }}
-      #     files: ./coverage.xml
-
-  style-check:
-    name: Run linter and format check (ruff)
-    runs-on: ubuntu-latest
-    needs: unit-test-pytest
-
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref || github.ref_name }}
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Install ruff
-        run: |
-          python -m pip install --upgrade pip
-          python -m pip install ruff
-
-      - name: Run ruff linter
-        run: ruff check --fix src/app.py
-
-      - name: Run ruff formatter
-        run: ruff format src/app.py
-
-      - name: Commit formatting changes
-        uses: stefanzweifel/git-auto-commit-action@v7
-        with:
-          commit_message: "style: auto-format with ruff"
+          Rscript -e '
+            lints <- lintr::lint_dir("src")
+            print(lints)
+            if (length(lints) > 0) quit(status = 1)
+          '
 
   validate-app:
     name: Validate Shiny app loads
     runs-on: ubuntu-latest
-    needs: [unit-test-pytest, style-check]
+    needs: lint-r
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
         with:
-          python-version: '3.12'
+          r-version: 'release'
 
-      - name: Install dependencies
+      - name: Install system dependencies
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install -r requirements.txt
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev
 
-      - name: Validate app
+      - name: Install R packages
         run: |
-          python -m shiny run --port 8000 src/app.py &
-          APP_PID=$!
-          sleep 10
-          curl --fail --retry 3 --retry-delay 2 http://localhost:8000
-          kill $APP_PID
+          Rscript -e '
+            install.packages(c(
+              "shiny", "bslib", "here", "readr", "dplyr", "stringr",
+              "ggplot2", "plotly", "tidyr", "DT"
+            ), repos = "https://cloud.r-project.org")
+          '
+
+      - name: Validate app parses without error
+        run: |
+          Rscript -e '
+            setwd(".")
+            tryCatch({
+              source("src/data.R")
+              source("src/charts/ggplot_charts.R")
+              source("src/components/kpi_card.R")
+              source("src/pages/sector.R")
+              source("src/app.R")
+              message("App parsed successfully.")
+            }, error = function(e) {
+              message("App failed to parse: ", conditionMessage(e))
+              quit(status = 1)
+            })
+          '

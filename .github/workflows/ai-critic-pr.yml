@@ -34,14 +34,15 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           DIFF: ${{ steps.diff.outputs.diff }}
         run: |
-          SYSTEM_PROMPT="You are a helpful code review assistant for a Python Shiny dashboard project.
+          SYSTEM_PROMPT="You are a helpful code review assistant for an R Shiny dashboard project.
           Your task is to review pull request code changes for quality, correctness, and maintainability.
 
           Pay special attention to:
-          - Shiny reactive patterns (reactive.Calc, reactive.Effect, reactive.Value)
-          - UI layout structure and component usage
-          - Data wrangling logic and pandas/polars usage
+          - Shiny reactive patterns (reactive, observe, observeEvent, reactiveVal)
+          - UI layout structure using bslib and component usage
+          - Data wrangling logic with dplyr/tidyr
           - Separation of concerns between UI and server logic
+          - ggplot2/plotly chart construction
 
           If the code is well-written, efficient, and follows best practices, acknowledge the good work and highlight what was done well.
 
