@@ -30,7 +30,7 @@ Below is a short preview of the dashboard interface.
 | Build | URL |
 |-------|-----|
 | Stable (`main`) | []() |
-| Preview (`dev`) | [https://connect.posit.cloud/shrutisasi/content/019ceeab-da38-fe19-be20-c31d0b3abe3d](https://connect.posit.cloud/shrutisasi/content/019ceeab-da38-fe19-be20-c31d0b3abe3d) |
+| Preview (`dev`) | [https://connect.posit.cloud/shrutisasi/content/019ceeab-da38-fe19-be20-c31d0b3abe3d](https://connect.posit.cloud/shrutisasi/content/019ceeab-da38-fe19-be20-c31d0b3abe3d)|
 
 ## Developer Setup
 
