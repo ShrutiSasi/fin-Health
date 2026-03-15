@@ -18,7 +18,6 @@ Investment analysts and portfolio managers often need to compare financial perfo
 ## Features and User Interface
 - **Sector Analysis (Strategic Overview)**
     - **Peer Benchmarking**: Visualize sector profitability and revenue growth using reactive ggplot2/plotly scatter plots and bar charts.
-    - **Peer Benchmarking**: Visualize sector profitability and revenue growth using reactive ggplot2/plotly scatter plots and bar charts.
     - **Trend Indicators**: Real-time KPI cards showing margin trends with visual directional cues (▲/▼).
 
 ## Demo
