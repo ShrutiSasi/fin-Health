@@ -1,0 +1,100 @@
+[
+  {
+    "objectID": "LICENSE.html",
+    "href": "LICENSE.html",
+    "title": "fin-Health",
+    "section": "",
+    "text": "MIT License\nCopyright (c) 2026 ShrutiSasi\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+  },
+  {
+    "objectID": "README.html",
+    "href": "README.html",
+    "title": "fin-Health",
+    "section": "",
+    "text": "Build\n\n\n\nProject\n \n\n\nMeta\n  \n\n\n\n\n\nfin-Health is an interactive dashboard that visualizes the financial health of publicly traded companies. It allows users to explore key financial metrics such as revenue, profitability, debt ratios, and cash flow across companies and time periods. fin-Health supports investors and analysts in making data-driven comparisons and evaluating corporate financial performance across sectors and time.\n\n\n\nInvestment analysts and portfolio managers often need to compare financial performance across sectors and individual companies to support data-driven investment decisions. However, extracting insights from financial statements typically requires manually compiling data and creating ad-hoc visualizations, a process that can be both time-consuming and prone to errors.\nfin-Health addresses this challenge by providing a centralized, interactive dashboard that enables users to explore financial performance efficiently. By allowing users to filter data by time period, sector, and financial metrics, the dashboard facilitates rapid analysis of profitability trends, peer benchmarking, and key financial indicators.\n\n\n\n\nSector Analysis (Strategic Overview)\n\nPeer Benchmarking: Visualize sector profitability and revenue growth using reactive ggplot2/plotly scatter plots and bar charts.\nPeer Benchmarking: Visualize sector profitability and revenue growth using reactive ggplot2/plotly scatter plots and bar charts.\nTrend Indicators: Real-time KPI cards showing margin trends with visual directional cues (▲/▼).\n\n\n\n\n\nBelow is a short preview of the dashboard interface. \n\n\n\n\n\n\nBuild\nURL\n\n\n\n\nStable (main)\n\n\n\nPreview (dev)\nhttps://connect.posit.cloud/shrutisasi/content/019ceeab-da38-fe19-be20-c31d0b3abe3d\n\n\n\n\n\n\n\n\n\nR (version 4.3 or higher)\nR packages: shiny, bslib, here, readr, dplyr, stringr, ggplot2, plotly, tidyr, DT\n(Optional) conda for environment management\n\nFor a more comprehensive guide on development guidelines for this project, check out our contributing page here.\n\nInstall R (&gt;= 4.3) as a prerequisite. Optionally install conda for environment management.\nOpen terminal and run the following commands.\nClone the repository:\n\ngit clone https://github.com/ShrutiSasi/fin-Health.git\ncd fin-Health\n\nCreate and activate the conda environment (optional):\n\nconda env create -f environment.yml\nconda activate fin-Health\n\nRun fin-Health Shiny for R dashboard locally:\n\nRscript -e 'shiny::runApp(\"src/app.R\", launch.browser = TRUE)'\n\n\n\n\nInterested in contributing? Check out the contributing guidelines here. Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms.\n\n\n\n\nCopyright © 2026 Shruti Sasi\nFree software distributed under the MIT License.\nDocumentation made available under Creative Commons By 4.0 - Attribution 4.0 International (CC-BY-4.0)"
+  },
+  {
+    "objectID": "README.html#project-synopsis",
+    "href": "README.html#project-synopsis",
+    "title": "fin-Health",
+    "section": "",
+    "text": "fin-Health is an interactive dashboard that visualizes the financial health of publicly traded companies. It allows users to explore key financial metrics such as revenue, profitability, debt ratios, and cash flow across companies and time periods. fin-Health supports investors and analysts in making data-driven comparisons and evaluating corporate financial performance across sectors and time."
+  },
+  {
+    "objectID": "README.html#motivation",
+    "href": "README.html#motivation",
+    "title": "fin-Health",
+    "section": "",
+    "text": "Investment analysts and portfolio managers often need to compare financial performance across sectors and individual companies to support data-driven investment decisions. However, extracting insights from financial statements typically requires manually compiling data and creating ad-hoc visualizations, a process that can be both time-consuming and prone to errors.\nfin-Health addresses this challenge by providing a centralized, interactive dashboard that enables users to explore financial performance efficiently. By allowing users to filter data by time period, sector, and financial metrics, the dashboard facilitates rapid analysis of profitability trends, peer benchmarking, and key financial indicators."
+  },
+  {
+    "objectID": "README.html#features-and-user-interface",
+    "href": "README.html#features-and-user-interface",
+    "title": "fin-Health",
+    "section": "",
+    "text": "Sector Analysis (Strategic Overview)\n\nPeer Benchmarking: Visualize sector profitability and revenue growth using reactive ggplot2/plotly scatter plots and bar charts.\nPeer Benchmarking: Visualize sector profitability and revenue growth using reactive ggplot2/plotly scatter plots and bar charts.\nTrend Indicators: Real-time KPI cards showing margin trends with visual directional cues (▲/▼)."
+  },
+  {
+    "objectID": "README.html#demo",
+    "href": "README.html#demo",
+    "title": "fin-Health",
+    "section": "",
+    "text": "Below is a short preview of the dashboard interface."
+  },
+  {
+    "objectID": "README.html#deployment",
+    "href": "README.html#deployment",
+    "title": "fin-Health",
+    "section": "",
+    "text": "Build\nURL\n\n\n\n\nStable (main)\n\n\n\nPreview (dev)\nhttps://connect.posit.cloud/shrutisasi/content/019ceeab-da38-fe19-be20-c31d0b3abe3d"
+  },
+  {
+    "objectID": "README.html#developer-setup",
+    "href": "README.html#developer-setup",
+    "title": "fin-Health",
+    "section": "",
+    "text": "R (version 4.3 or higher)\nR packages: shiny, bslib, here, readr, dplyr, stringr, ggplot2, plotly, tidyr, DT\n(Optional) conda for environment management\n\nFor a more comprehensive guide on development guidelines for this project, check out our contributing page here.\n\nInstall R (&gt;= 4.3) as a prerequisite. Optionally install conda for environment management.\nOpen terminal and run the following commands.\nClone the repository:\n\ngit clone https://github.com/ShrutiSasi/fin-Health.git\ncd fin-Health\n\nCreate and activate the conda environment (optional):\n\nconda env create -f environment.yml\nconda activate fin-Health\n\nRun fin-Health Shiny for R dashboard locally:\n\nRscript -e 'shiny::runApp(\"src/app.R\", launch.browser = TRUE)'"
+  },
+  {
+    "objectID": "README.html#contributing",
+    "href": "README.html#contributing",
+    "title": "fin-Health",
+    "section": "",
+    "text": "Interested in contributing? Check out the contributing guidelines here. Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms."
+  },
+  {
+    "objectID": "README.html#license",
+    "href": "README.html#license",
+    "title": "fin-Health",
+    "section": "",
+    "text": "Copyright © 2026 Shruti Sasi\nFree software distributed under the MIT License.\nDocumentation made available under Creative Commons By 4.0 - Attribution 4.0 International (CC-BY-4.0)"
+  },
+  {
+    "objectID": "CONTRIBUTING.html",
+    "href": "CONTRIBUTING.html",
+    "title": "Contributing",
+    "section": "",
+    "text": "Contributions of all kinds are welcome here, and they are greatly appreciated! Every little bit helps, and credit will always be given.\n\n\nYou can contribute in many ways, for example:\n\nReport bugs\nFix Bugs\nImplement Features\nWrite Documentation\nSubmit Feedback\n\n\n\nReport bugs at https://github.com/ShrutiSasi/fin-Health/issues.\nIf you are reporting a bug, please follow the template guidelines. The more detailed your report, the easier and thus faster we can help you.\n\n\n\nLook through the GitHub issues for bugs. Anything labelled with bug and help wanted is open to whoever wants to implement it. When you decide to work on such an issue, please assign yourself to it and add a comment that you’ll be working on that, too. If you see another issue without the help wanted label, just post a comment, the maintainers are usually happy for any support that they can get.\n\n\n\nLook through the GitHub issues for features. Anything labelled with enhancement and help wanted is open to whoever wants to implement it. As for fixing bugs, please assign yourself to the issue and add a comment that you’ll be working on that, too. If another enhancement catches your fancy, but it doesn’t have the help wanted label, just post a comment, the maintainers are usually happy for any support that they can get.\n\n\n\nfin-Health could always use more documentation, whether as part of the official documentation, in docstrings, or even on the web in blog posts, articles, and such. Just open an issue to let us know what you will be working on so that we can provide you with guidance.\n\n\n\nThe best way to send feedback is to file an issue at https://github.com/ShrutiSasi/fin-Health/issues using the Peer Review template. If your feedback fits the format of the Peer Review template, please use that. Remember that this is a volunteer-driven project and everybody has limited time.\n\n\n\n\nWe use a branching workflow based on GitHub Flow. Here’s how it works:\n\n\nmain\n └── dev\n      ├── feat/feature-name\n      │    └── test/feature-name\n      └── fix/bug-name\n\n\n\n\nmain branch: The stable, production-ready branch. Only receives merges from dev after milestone completion.\ndev branch: The integration branch where all features and fixes are merged. Branched from main.\nFeature branches: For new features, branch from dev:\ngit switch dev\ngit pull origin dev\ngit checkout -b feat/your-feature-name\ngit push origin feat/your-feature-name\nFix branches: For bug fixes, branch from dev:\ngit switch dev\ngit pull origin dev\ngit checkout -b fix/bug-name\ngit push origin fix/bug-name\nTest branches: For writing tests, branch from your feature branch:\ngit switch feat/your-feature-name\ngit checkout -b test/your-feature-name\ngit push origin test/your-feature-name\nWhen tests are complete, create a PR from test/your-feature-name → feat/your-feature-name.\nMerging back: Once your feature is complete (code + tests), create a PR from feat/your-feature-name → dev.\n\n\n\n\n\nEnsure all tests pass locally before creating a PR\nRequest review from at least one team member\nAddress all review comments before merging\nAfter approval, merge and delete the feature branch\n\n\n\n\n\nReady to contribute? Here’s how to set up fin-Health for local development.\n\nInstall conda as a prerequisite.\nFork the https://github.com/ShrutiSasi/fin-Health repository on GitHub.\nClone your fork locally (if you want to work locally)\ngit clone git@github.com:your_name_here/fin-Health.git\nCreate and activate the conda environment using one of two ways:\nInstall via conda:\nconda env create -f environment.yml\nconda activate fin-Health\nCreate a branch for local development using the default branch (typically dev) as a starting point. Use fix or feature as a prefix for your branch name.\ngit checkout dev\ngit checkout -b fix-name-of-your-bugfix\nNow you can make your changes locally.\nWhen you’re done making changes, lint and format your code with Ruff:\nruff check src/ --fix .\nruff format src/\nCheck that your changes pass our test suite.\npytest -v --cov --cov-branch --cov-report=term-missing --cov-report=xml\nCommit your changes and push your branch to GitHub. Please use semantic commit messages.\ngit add .\ngit commit -m \"fix: summarize your changes\"\ngit push -u origin fix-name-of-your-bugfix\nOpen the link displayed in the message when pushing your new branch in order to submit a pull request.\n\n\n\nBefore you submit a pull request, check that it meets these guidelines:\n\nThe pull request should include tests.\nIf the pull request adds functionality, the docs should be updated. Put your new functionality into a function with a docstring.\nYour pull request will automatically be checked by the full test suite. It needs to pass all of them before it can be considered for merging."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#example-contributions",
+    "href": "CONTRIBUTING.html#example-contributions",
+    "title": "Contributing",
+    "section": "",
+    "text": "You can contribute in many ways, for example:\n\nReport bugs\nFix Bugs\nImplement Features\nWrite Documentation\nSubmit Feedback\n\n\n\nReport bugs at https://github.com/ShrutiSasi/fin-Health/issues.\nIf you are reporting a bug, please follow the template guidelines. The more detailed your report, the easier and thus faster we can help you.\n\n\n\nLook through the GitHub issues for bugs. Anything labelled with bug and help wanted is open to whoever wants to implement it. When you decide to work on such an issue, please assign yourself to it and add a comment that you’ll be working on that, too. If you see another issue without the help wanted label, just post a comment, the maintainers are usually happy for any support that they can get.\n\n\n\nLook through the GitHub issues for features. Anything labelled with enhancement and help wanted is open to whoever wants to implement it. As for fixing bugs, please assign yourself to the issue and add a comment that you’ll be working on that, too. If another enhancement catches your fancy, but it doesn’t have the help wanted label, just post a comment, the maintainers are usually happy for any support that they can get.\n\n\n\nfin-Health could always use more documentation, whether as part of the official documentation, in docstrings, or even on the web in blog posts, articles, and such. Just open an issue to let us know what you will be working on so that we can provide you with guidance.\n\n\n\nThe best way to send feedback is to file an issue at https://github.com/ShrutiSasi/fin-Health/issues using the Peer Review template. If your feedback fits the format of the Peer Review template, please use that. Remember that this is a volunteer-driven project and everybody has limited time."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#git-workflow",
+    "href": "CONTRIBUTING.html#git-workflow",
+    "title": "Contributing",
+    "section": "",
+    "text": "We use a branching workflow based on GitHub Flow. Here’s how it works:\n\n\nmain\n └── dev\n      ├── feat/feature-name\n      │    └── test/feature-name\n      └── fix/bug-name\n\n\n\n\nmain branch: The stable, production-ready branch. Only receives merges from dev after milestone completion.\ndev branch: The integration branch where all features and fixes are merged. Branched from main.\nFeature branches: For new features, branch from dev:\ngit switch dev\ngit pull origin dev\ngit checkout -b feat/your-feature-name\ngit push origin feat/your-feature-name\nFix branches: For bug fixes, branch from dev:\ngit switch dev\ngit pull origin dev\ngit checkout -b fix/bug-name\ngit push origin fix/bug-name\nTest branches: For writing tests, branch from your feature branch:\ngit switch feat/your-feature-name\ngit checkout -b test/your-feature-name\ngit push origin test/your-feature-name\nWhen tests are complete, create a PR from test/your-feature-name → feat/your-feature-name.\nMerging back: Once your feature is complete (code + tests), create a PR from feat/your-feature-name → dev.\n\n\n\n\n\nEnsure all tests pass locally before creating a PR\nRequest review from at least one team member\nAddress all review comments before merging\nAfter approval, merge and delete the feature branch"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#developer-setup",
+    "href": "CONTRIBUTING.html#developer-setup",
+    "title": "Contributing",
+    "section": "",
+    "text": "Ready to contribute? Here’s how to set up fin-Health for local development.\n\nInstall conda as a prerequisite.\nFork the https://github.com/ShrutiSasi/fin-Health repository on GitHub.\nClone your fork locally (if you want to work locally)\ngit clone git@github.com:your_name_here/fin-Health.git\nCreate and activate the conda environment using one of two ways:\nInstall via conda:\nconda env create -f environment.yml\nconda activate fin-Health\nCreate a branch for local development using the default branch (typically dev) as a starting point. Use fix or feature as a prefix for your branch name.\ngit checkout dev\ngit checkout -b fix-name-of-your-bugfix\nNow you can make your changes locally.\nWhen you’re done making changes, lint and format your code with Ruff:\nruff check src/ --fix .\nruff format src/\nCheck that your changes pass our test suite.\npytest -v --cov --cov-branch --cov-report=term-missing --cov-report=xml\nCommit your changes and push your branch to GitHub. Please use semantic commit messages.\ngit add .\ngit commit -m \"fix: summarize your changes\"\ngit push -u origin fix-name-of-your-bugfix\nOpen the link displayed in the message when pushing your new branch in order to submit a pull request.\n\n\n\nBefore you submit a pull request, check that it meets these guidelines:\n\nThe pull request should include tests.\nIf the pull request adds functionality, the docs should be updated. Put your new functionality into a function with a docstring.\nYour pull request will automatically be checked by the full test suite. It needs to pass all of them before it can be considered for merging."
+  }
+]
