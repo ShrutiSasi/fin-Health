@@ -1,0 +1,23 @@
+name: fin-health
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - r-base>=4.3
+  - r-shiny
+  - r-bslib
+  - r-here
+  - r-readr
+  - r-dplyr
+  - r-stringr
+  - r-ggplot2
+  - r-plotly
+  - r-tidyr
+  - r-dt
+  # Dev / analysis tools
+  - python=3.12
+  - pip
+  - pip:
+      - jupyterlab
+      - ipykernel
+  - r-lintr

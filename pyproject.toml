@@ -1,0 +1,21 @@
+################################################################################
+# Project Configuration
+################################################################################
+
+[project]
+name = "fin-health"
+version = "0.1.0"
+description = "An interactive R Shiny dashboard that visualizes the financial health of publicly traded companies."
+authors = [
+    { name = "Shruti Sasi", email = "shruti.sasi14@live.com" }
+]
+license = [
+    { text = "MIT" },
+    { text = "CC-BY-4.0" },
+]
+
+[project.urls]
+Homepage = "https://github.com/ShrutiSasi/fin-Health"
+"Source Code" = "https://github.com/ShrutiSasi/fin-Health/tree/main/src"
+"Bug Tracker" = "https://github.com/ShrutiSasi/fin-Health/issues"
+Documentation = "https://github.com/ShrutiSasi/fin-Health/blob/main/README.md"

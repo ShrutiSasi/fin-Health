@@ -1,0 +1,82 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main, dev]
+  push:
+    branches: [main, dev]
+  workflow_dispatch:
+
+jobs:
+  lint-r:
+    name: Lint R code
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check-out repository
+        uses: actions/checkout@v4
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: 'release'
+
+      - name: Install R dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::lintr
+
+      - name: Run lintr
+        run: |
+          Rscript -e '
+            lints <- lintr::lint_dir("src")
+            print(lints)
+            if (length(lints) > 0) quit(status = 1)
+          '
+
+  validate-app:
+    name: Validate Shiny app loads
+    runs-on: ubuntu-latest
+    needs: lint-r
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: 'release'
+
+      - name: Install R dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::shiny
+            any::bslib
+            any::here
+            any::readr
+            any::dplyr
+            any::stringr
+            any::ggplot2
+            any::plotly
+            any::tidyr
+            any::DT
+
+      - name: Validate app parses without error
+        run: |
+          Rscript -e '
+            setwd(".")
+            tryCatch({
+              source("src/data.R")
+              source("src/charts/ggplot_charts.R")
+              source("src/components/kpi_card.R")
+              source("src/pages/sector.R")
+              source("src/app.R")
+              message("App parsed successfully.")
+            }, error = function(e) {
+              message("App failed to parse: ", conditionMessage(e))
+              quit(status = 1)
+            })
+          '

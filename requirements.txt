@@ -1,0 +1,2 @@
+# only runtime packages
+# (R Shiny app — no Python runtime packages required)
