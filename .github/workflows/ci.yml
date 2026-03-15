@@ -2,9 +2,9 @@ name: CI
 
 on:
   pull_request:
-    branches: [main, develop]
+    branches: [main, dev]
   push:
-    branches: [main, develop]
+    branches: [main, dev]
   workflow_dispatch:
 
 jobs:
@@ -49,19 +49,20 @@ jobs:
         with:
           r-version: 'release'
 
-      - name: Install system dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev
-
-      - name: Install R packages
-        run: |
-          Rscript -e '
-            install.packages(c(
-              "shiny", "bslib", "here", "readr", "dplyr", "stringr",
-              "ggplot2", "plotly", "tidyr", "DT"
-            ), repos = "https://cloud.r-project.org")
-          '
+      - name: Install R dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::shiny
+            any::bslib
+            any::here
+            any::readr
+            any::dplyr
+            any::stringr
+            any::ggplot2
+            any::plotly
+            any::tidyr
+            any::DT
 
       - name: Validate app parses without error
         run: |
