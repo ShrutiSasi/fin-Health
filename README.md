@@ -38,7 +38,7 @@ Below is a short preview of the dashboard interface.
 
 -   R (version 4.3 or higher)
 -   R packages: `shiny`, `bslib`, `here`, `readr`, `dplyr`, `stringr`, `ggplot2`, `plotly`, `tidyr`, `DT`
--   (Optional) `conda` for environment management
+-   `conda` for environment management
 
 For a more comprehensive guide on development guidelines for this project, check out our contributing page [here](./CONTRIBUTING.md).
 
