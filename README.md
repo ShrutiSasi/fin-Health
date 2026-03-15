@@ -42,7 +42,7 @@ Below is a short preview of the dashboard interface.
 
 For a more comprehensive guide on development guidelines for this project, check out our contributing page [here](./CONTRIBUTING.md).
 
-1. Install [R](https://cran.r-project.org/) (>= 4.3) as a prerequisite. Optionally install [`conda`](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) for environment management.
+1. Install [R](https://cran.r-project.org/) (>= 4.3) as a prerequisite. Install [`conda`](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) for environment management.
 
 2. Open terminal and run the following commands.
 
@@ -53,7 +53,7 @@ git clone https://github.com/ShrutiSasi/fin-Health.git
 cd fin-Health
 ```
 
-4. Create and activate the conda environment (optional):
+4. Create and activate the conda environment:
 
 ```bash
 conda env create -f environment.yml
